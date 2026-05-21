@@ -817,7 +817,7 @@ function ProjectPageContent({ projectId }: { projectId: string }) {
             <input
               ref={fileInputRef}
               type="file"
-              accept="audio/*,video/mp4,video/quicktime,video/x-matroska,video/x-msvideo,video/webm"
+              accept="audio/*,.wav,.mp3,.flac,audio/wav,audio/wave,audio/mpeg,audio/mp3,audio/aacs,audio/aacp,audio/flac,video/mp4,video/quicktime,video/x-matroska,video/x-msvideo,video/webm"
               multiple
               className="hidden"
               onChange={handleFileInputChange}
