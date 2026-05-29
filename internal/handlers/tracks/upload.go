@@ -25,6 +25,8 @@ func (h *TracksHandler) UploadTrack(w http.ResponseWriter, r *http.Request) erro
 		return apperr.NewUnauthorized("user not found in context")
 	}
 
+	 r.Body = http.MaxBytesReader(w, r.Body, 1000 << 20) // 1GB limit
+
 	if err := r.ParseMultipartForm(100 << 20); err != nil {
 		return apperr.NewBadRequest("failed to parse form")
 	}
